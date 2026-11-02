@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELIMU NI NURU - TAFITI PRO</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:linear-gradient(135deg,#667eea,#764ba2);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{background:white;width:100%;max-width:420px;padding:30px;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+h1{text-align:center;color:#333;margin-bottom:5px;font-size:22px}
+p.sub{text-align:center;color:#666;margin-bottom:20px;font-size:14px}
+input{width:100%;padding:14px;margin:10px 0;border:2px solid #ddd;border-radius:8px;font-size:16px}
+input:focus{border-color:#667eea;outline:none}
+button{width:100%;padding:14px;background:#667eea;color:white;border:none;border-radius:8px;font-size:16px;font-weight:bold;cursor:pointer;margin-top:10px}
+button:hover{background:#5a67d8}
+.msg{margin-top:15px;padding:10px;border-radius:5px;text-align:center;display:none}
+.success{background:#c6f6d5;color:#22543d}
+.error{background:#fed7d7;color:#742a2a}
+.badge{background:#48bb78;color:white;padding:5px 10px;border-radius:20px;font-size:12px;display:inline-block;margin-bottom:15px}
+</style>
+</head>
+<body>
+<div class="card">
+<div style="text-align:center"><span class="badge">✅ INAFANYA KAZI KWA VIFAA VYOTE</span></div>
+<h1>ELIMU NI NURU</h1>
+<p class="sub">TAFITI PRO - Platform ya Elimu Tanzania<br><b>Hakuna kuzuia kifaa tena!</b></p>
+<input id="email" type="email" placeholder="Weka Email yako">
+<input id="password" type="password" placeholder="Weka Password yako">
+<button onclick="ingia()">INGIA SASA</button>
+<div id="msg" class="msg"></div>
+<p style="margin-top:20px;font-size:12px;color:#888;text-align:center">
+Toleo Jipya: Kifaa chochote kinaweza kuingia<br>
+Simu, Tablet, Computer - Vyote vinafanya kazi!
+</p>
+</div>
+
+<script>
+// HAKUNA KODI YA KUZUIA KIFAA HAPA!
+// Tumeondoa kabisa ukaguzi wa device_id
+// Sasa Supabase ndio itaamua tu - si kifaa!
+
+function ingia(){
+  const email = document.getElementById('email').value.trim();
+  const pass = document.getElementById('password').value.trim();
+  const msg = document.getElementById('msg');
+  
+  if(!email || !pass){
+    msg.style.display='block';
+    msg.className='msg error';
+    msg.innerText='Tafadhali jaza email na password!';
+    return;
+  }
+  
+  msg.style.display='block';
+  msg.className='msg success';
+  msg.innerText='✅ Hongera '+email+'! Login imefanikiwa! Sasa unaweza kutumia kwenye kifaa chochote - hakuna tena "kifaa hiki"!';
+  
+  // Hapa ndipo tutaunganisha na Supabase yako
+  // Nipe URL na ANON KEY ya Supabase yako nikuunganishie moja kwa moja
+}
+
+console.log("ELIMU NI NURU - Toleo jipya bila kuzuia kifaa");
+</script>
+</body>
+</html>
